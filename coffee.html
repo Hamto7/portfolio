@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mocha Lane - Concept Coffee Shop Landing Page">
+  <title>Mocha Lane | Coffee Shop Concept</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #1a1411;
+      --bg-elevated: #231b16;
+      --fg: #f5efe8;
+      --fg-muted: #b8a89a;
+      --accent: #d4a574;
+      --accent-dark: #b8905e;
+      --card: #2a201a;
+      --border: #3d2f26;
+      --radius: 16px;
+      --transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-fast: 0.2s ease;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Atmosphere */
+    .atmosphere {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.15;
+    }
+
+    .orb-1 {
+      width: 500px;
+      height: 500px;
+      background: var(--accent);
+      top: -150px;
+      right: -150px;
+    }
+
+    .orb-2 {
+      width: 300px;
+      height: 300px;
+      background: #8b5a3c;
+      bottom: -100px;
+      left: -100px;
+    }
+
+    /* Layout */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 20px 0;
+      background: rgba(26, 20, 17, 0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid transparent;
+      transition: var(--transition-fast);
+    }
+
+    header.scrolled {
+      border-bottom-color: var(--border);
+      background: rgba(26, 20, 17, 0.95);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 140px 0 80px;
+      position: relative;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 700px;
+      margin: 0 auto;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: revealUp 1s var(--transition) forwards;
+    }
+
+    @keyframes revealUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 8px 20px;
+      background: rgba(212, 165, 116, 0.15);
+      border: 1px solid var(--accent);
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 600;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    .hero .highlight {
+      color: var(--accent);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--fg-muted);
+      margin-bottom: 36px;
+      line-height: 1.7;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 18px 40px;
+      border-radius: 100px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: var(--transition-fast);
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(212, 165, 116, 0.3);
+    }
+
+    .btn-primary:active {
+      transform: translateY(-1px);
+    }
+
+    /* Menu Section */
+    .menu {
+      padding: 100px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-tag {
+      display: inline-block;
+      padding: 6px 16px;
+      background: rgba(212, 165, 116, 0.15);
+      color: var(--accent);
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .menu-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      text-align: center;
+      transition: var(--transition);
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    .menu-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .menu-card:hover {
+      transform: translateY(-12px) scale(1.02);
+      border-color: var(--accent);
+      box-shadow:
+        0 30px 60px rgba(0, 0, 0, 0.4),
+        0 0 0 1px var(--accent);
+    }
+
+    .card-icon {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 20px;
+      background: rgba(212, 165, 116, 0.12);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      transition: var(--transition);
+    }
+
+    .menu-card:hover .card-icon {
+      background: var(--accent);
+      color: var(--bg);
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    .menu-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .menu-card .price {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .menu-card .desc {
+      font-size: 0.9rem;
+      color: var(--fg-muted);
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .footer-note {
+      color: var(--fg-muted);
+      font-size: 0.85rem;
+      font-style: italic;
+    }
+
+    /* Stagger delays */
+    .stagger-1 { transition-delay: 0.1s; }
+    .stagger-2 { transition-delay: 0.2s; }
+    .stagger-3 { transition-delay: 0.3s; }
+
+    /* Responsive */
+    @media (max-width: 860px) {
+      .menu-grid {
+        grid-template-columns: 1fr;
+        max-width: 380px;
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        padding: 120px 0 60px;
+      }
+
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .menu {
+        padding: 70px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Atmosphere -->
+  <div class="atmosphere" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+  </div>
+
+  <div class="container">
+    <!-- Header -->
+    <header id="header">
+      <nav>
+        <a href="#" class="logo" aria-label="Mocha Lane - Home">Mocha Lane</a>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+      <div class="hero-content">
+        <span class="hero-badge">CONCEPT PROJECT</span>
+        <h1>Where every cup tells a <span class="highlight">story</span></h1>
+        <p>Handcrafted specialty coffee in a warm, inviting space. Ethically sourced beans, expertly roasted, brewed with intention.</p>
+        <a href="#menu" class="btn btn-primary">Explore Our Menu</a>
+      </div>
+    </section>
+
+    <!-- Menu -->
+    <section class="menu" id="menu">
+      <div class="section-header">
+        <span class="section-tag">Our Offerings</span>
+        <h2 class="section-title">Signature Drinks</h2>
+      </div>
+      <div class="menu-grid">
+        <article class="menu-card reveal stagger-1">
+          <div class="card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 0 1 0 8h-1"></path><path d="M3 8h14v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8z"></path><line x1="6" y1="2" x2="6" y2="4"></line><line x1="10" y1="2" x2="10" y2="4"></line><line x1="14" y1="2" x2="14" y2="4"></line></svg>
+          </div>
+          <h3>House Espresso</h3>
+          <div class="price">$4.50</div>
+          <p class="desc">Rich, chocolatey notes with a caramel finish. Our signature blend pulled as a double shot.</p>
+        </article>
+
+        <article class="menu-card reveal stagger-2">
+          <div class="card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 18v-7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v7"></path><path d="M13 2v7a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V2"></path></svg>
+          </div>
+          <h3>Velvet Latte</h3>
+          <div class="price">$5.50</div>
+          <p class="desc">Silky steamed milk over espresso, topped with house-made vanilla syrup and latte art.</p>
+        </article>
+
+        <article class="menu-card reveal stagger-3">
+          <div class="card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 0 1 0 8h-1"></path><path d="M3 8h14v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8z"></path><line x1="10" y1="2" x2="10" y2="4"></line><path d="M6 2v4"></path><path d="M14 2v4"></path><line x1="8" y1="16" x2="8" y2="18"></line><line x1="16" y1="16" x2="16" y2="18"></line></svg>
+          </div>
+          <h3>Mocha Lane Special</h3>
+          <div class="price">$6.00</div>
+          <p class="desc">Espresso, dark chocolate ganache, oat milk, whipped cream, cocoa nibs. Our namesake drink.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p class="footer-note">Concept project by Mohamed Adel, not a real business.</p>
+    </footer>
+  </div>
+
+  <script>
+    // Intersection Observer for scroll fade-in
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px 0px -15% 0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Header scroll effect
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    }, { passive: true });
+  </script>
+</body>
+</html>

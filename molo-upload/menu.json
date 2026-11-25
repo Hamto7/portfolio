@@ -1,0 +1,192 @@
+{
+  "brand": {
+    "name": "Molo Broast",
+    "tagline": "Fried Chicken",
+    "tagline_ar": "فرايد تشيكن",
+    "hotline": "15243",
+    "currency": "EGP"
+  },
+  "categories": [
+    {
+      "id": "sandwiches",
+      "name": "SANDWICHES",
+      "name_ar": "ساندوتشات",
+      "items": [
+        { "id": "molo-twister", "name": "Molo Twister", "price": 100, "image": "molo-twister.jpg", "description_ar": "...", "spicy": false },
+        { "id": "molobino", "name": "Molobino", "price": 165, "image": "molobino.jpg", "description_ar": "...", "spicy": true },
+        { "id": "molotoov", "name": "Molotoov", "price_ro": 115, "price_l": 155, "image": "molotoov.jpg", "description_ar": "...", "spicy": true },
+        { "id": "molo-zinger", "name": "Molo Zinger", "price_ro": 110, "price_l": 140, "image": "molo-zinger.jpg", "description_ar": "...", "spicy": false },
+        { "id": "molo-classic", "name": "Molo Classic", "price_ro": 115, "price_l": 155, "image": "molo-classic.jpg", "description_ar": "...", "spicy": false },
+        { "id": "molosmoked", "name": "Molosmoked", "price": 190, "image": "molosmoked.jpg", "description_ar": "...", "spicy": false },
+        { "id": "molo-mighty-zinger", "name": "Molo Mighty Zinger", "price_ro": 140, "price_l": 190, "image": "molo-mighty-zinger.jpg", "description_ar": "...", "spicy": false },
+        { "id": "molo-ranch", "name": "Molo Ranch", "price_ro": 115, "price_l": 155, "image": "molo-ranch.jpg", "description_ar": "...", "spicy": false },
+        { "id": "molo-texas", "name": "Molo Texas", "price_ro": 115, "price_l": 155, "image": "molo-texas.jpg", "description_ar": "...", "spicy": false },
+        { "id": "molo-q", "name": "Molo Q", "price_ro": 115, "price_l": 155, "image": "molo-q.jpg", "description_ar": "...", "spicy": false }
+      ]
+    },
+    {
+      "id": "solo-meals",
+      "name": "SOLO MEALS",
+      "name_ar": "وجبات فردية",
+      "items": [
+        { "id": "duo", "name": "Duo", "price": 165, "image": "duo.jpg", "description_ar": "..." },
+        { "id": "triple", "name": "Triple", "price": 230, "image": "triple.jpg", "description_ar": "..." },
+        { "id": "quatro", "name": "Quatro", "price": 285, "image": "quatro.jpg", "description_ar": "..." },
+        { "id": "strips", "name": "Strips", "price": 135, "image": "strips.jpg", "description_ar": "..." },
+        { "id": "super-strips", "name": "Super Strips", "price": 205, "image": "super-strips.jpg", "description_ar": "..." },
+        { "id": "brostrips", "name": "Brostrips", "price": 290, "image": "brostrips.jpg", "description_ar": "..." },
+        { "id": "kids-candy", "name": "Kids: Candy Meal", "price": 150, "image": "kids-candy.jpg", "description_ar": "...", "sub_items": [{ "name": "Kids Toys", "price": 45, "image": "kids-toys.jpg" }] }
+      ]
+    },
+    {
+      "id": "family-meals",
+      "name": "FAMILY MEALS",
+      "name_ar": "وجبات عائلية",
+      "note": "Each includes 1L Big Cola",
+      "items": [
+        { "id": "friends-strips", "name": "Friends Strips", "price": 570, "image": "friends-strips.jpg", "description_ar": "..." },
+        { "id": "friends-meal", "name": "Friends Meal", "price": 630, "image": "friends-meal.jpg", "description_ar": "..." },
+        { "id": "economy", "name": "Economy", "price": 815, "image": "economy.jpg", "description_ar": "..." },
+        { "id": "super-economy", "name": "Super Economy", "price": 1000, "image": "super-economy.jpg", "description_ar": "..." },
+        { "id": "trio", "name": "Trio", "price": 655, "image": "trio.jpg", "description_ar": "..." },
+        { "id": "kids-junior", "name": "Kids: Junior", "price": 175, "image": "kids-junior.jpg", "description_ar": "..." },
+        { "id": "kids-busha", "name": "Kids: Busha", "price": 130, "image": "kids-busha.jpg", "description_ar": "..." }
+      ]
+    },
+    {
+      "id": "sides",
+      "name": "SIDES",
+      "name_ar": "إضافات جانبية",
+      "items": [
+        { "id": "strips-cheddar-fries", "name": "Strips Cheddar Fries", "price": 125, "image": "strips-cheddar-fries.jpg", "description_ar": "..." },
+        { "id": "cheddar-fries", "name": "Cheddar Fries", "price": 75, "image": "cheddar-fries.jpg", "description_ar": "..." },
+        { "id": "cheddar-jalapeno-fries", "name": "Cheddar Jalapeno Fries", "price": 85, "image": "cheddar-jalapeno-fries.jpg", "description_ar": "..." },
+        { "id": "wings-chili", "name": "Wings Chili", "price": 70, "image": "wings-chili.jpg", "description_ar": "..." },
+        { "id": "wings-bbq", "name": "Wings B.B.Q", "price": 70, "image": "wings-bbq.jpg", "description_ar": "..." },
+        { "id": "rice-jar", "name": "Rice Jar", "price": 30, "image": "rice-jar.jpg", "description_ar": "..." },
+        { "id": "rice", "name": "Rice", "price": 45, "image": "rice.jpg", "description_ar": "..." },
+        { "id": "rizo", "name": "Rizo", "price": 110, "image": "rizo.jpg", "description_ar": "..." }
+      ]
+    },
+    {
+      "id": "adds",
+      "name": "ADDS",
+      "name_ar": "إضافات",
+      "items": [
+        { "id": "combo", "name": "Combo", "price": 70, "image": "combo.jpg", "description_ar": "..." },
+        { "id": "fries-l", "name": "Fries L", "price": 60, "image": "fries-l.jpg", "description_ar": "..." },
+        { "id": "fries-m", "name": "Fries M", "price": 45, "image": "fries-m.jpg", "description_ar": "..." },
+        { "id": "strip-piece", "name": "Strip Piece", "price": 50, "image": "strip-piece.jpg", "description_ar": "..." },
+        { "id": "broast-piece", "name": "Broast Piece", "price": 80, "image": "broast-piece.jpg", "description_ar": "..." },
+        { "id": "cheese-fingers", "name": "Cheese Fingers", "price": 80, "image": "cheese-fingers.jpg", "description_ar": "..." },
+        { "id": "bread", "name": "Bread", "price": 10, "image": "bread.jpg", "description_ar": "..." },
+        { "id": "coleslaw", "name": "Coleslaw", "price": 25, "image": "coleslaw.jpg", "description_ar": "..." },
+        { "id": "cheddar-sauce", "name": "Cheddar Sauce", "price": 25, "image": "cheddar-sauce.jpg", "description_ar": "..." },
+        { "id": "large-cheddar-sauce", "name": "Large Cheddar Sauce", "price": 45, "image": "large-cheddar-sauce.jpg", "description_ar": "..." },
+        { "id": "cheese-jar", "name": "Cheese Jar", "price": 90, "image": "cheese-jar.jpg", "description_ar": "..." }
+      ]
+    },
+    {
+      "id": "sauces",
+      "name": "SAUCES",
+      "name_ar": "الصلصات",
+      "items": [
+        { "id": "sauce-toumeya", "name": "Toumeya", "price": 25, "image": "sauce-toumeya.jpg" },
+        { "id": "sauce-molo", "name": "Molo", "price": 25, "image": "sauce-molo.jpg" },
+        { "id": "sauce-ranch", "name": "Ranch", "price": 25, "image": "sauce-ranch.jpg" },
+        { "id": "sauce-hot-mayo", "name": "Hot Mayonnaise", "price": 25, "image": "sauce-hot-mayo.jpg" },
+        { "id": "sauce-bbq", "name": "B.B.Q", "price": 25, "image": "sauce-bbq.jpg" },
+        { "id": "sauce-mayo", "name": "Mayonnaise", "price": 25, "image": "sauce-mayo.jpg" },
+        { "id": "sauce-texas", "name": "Texas", "price": 25, "image": "sauce-texas.jpg" },
+        { "id": "sauce-sweet-chili", "name": "Sweet Chili", "price": 25, "image": "sauce-sweet-chili.jpg" }
+      ]
+    },
+    {
+      "id": "drinks",
+      "name": "DRINKS",
+      "name_ar": "المشروبات",
+      "items": [
+        { "id": "water", "name": "Water", "price": 15, "image": "images/water.jpg?v=3" },
+        { "id": "small-juice", "name": "Small Juice", "price": 25, "image": "images/juice.jpg?v=3" },
+        { "id": "big-cola", "name": "Big Cola", "price": 20, "image": "images/big-cola.jpg?v=3" },
+        { "id": "big-cola-1l", "name": "Big Cola 1L", "price": 45, "image": "images/big-cola-1l.jpg?v=3" }
+      ]
+    }
+  ],
+  "branches": [
+    {
+      "name_en": "Tanta",
+      "name_ar": "طنطا",
+      "address_en": "El-Estade Street, Governorate Buildings, in front of Ibn Sina Hospital",
+      "address_ar": "شارع الإستاد، عمارات المحافظة، أمام مستشفى بن سينا"
+    },
+    {
+      "name_en": "Tanta",
+      "name_ar": "طنطا",
+      "address_en": "CHILL OUT Gas Station",
+      "address_ar": "بنزينة CHILL OUT"
+    },
+    {
+      "name_en": "Shebin El-Kom",
+      "name_ar": "شبين الكوم",
+      "address_en": "Atef El-Sadat Street, next to Paris Plaza",
+      "address_ar": "شارع عاطف السادات، بجوار باريس بلازا"
+    },
+    {
+      "name_en": "Mansoura",
+      "name_ar": "المنصورة",
+      "address_en": "Al-Gamaa District, in front of Toshka Gate",
+      "address_ar": "الجامعة، أمام بوابة توشكى"
+    },
+    {
+      "name_en": "Zagazig",
+      "name_ar": "الزقازيق",
+      "address_en": "Before University, Omar Ibn Al-Khattab Street, in front of Languages School",
+      "address_ar": "قبل الجامعة، شارع عمر بن الخطاب، أمام مدرسة اللغات"
+    },
+    {
+      "name_en": "Kafr El-Zayat",
+      "name_ar": "كفر الزيات",
+      "address_en": "El-Geish Street, next to Dahab Sweets",
+      "address_ar": "شارع الجيش، بجوار دهب للحاويات"
+    },
+    {
+      "name_en": "Kafr El-Sheikh",
+      "name_ar": "كفر الشيخ",
+      "address_en": "Sanaa Garden Wall, next to Vodafone",
+      "address_ar": "سور حديقة صنعاء، بجوار فودافون"
+    },
+    {
+      "name_en": "Alexandria",
+      "name_ar": "الإسكندرية",
+      "address_en": "Corniche Sporting, next to Qaoud Hotel",
+      "address_ar": "كورنيش سبورتنج، بجوار فندق قاعود"
+    },
+    {
+      "name_en": "Damanhour",
+      "name_ar": "دمنهور",
+      "address_en": "City Club Wall, in front of Damanhour Club Gate",
+      "address_ar": "سور نادي سيتي كلوب، أمام بوابة نادي دمنهور"
+    },
+    {
+      "name_en": "Mohandessin",
+      "name_ar": "المهندسين",
+      "address_en": "53 Syria Street, in front of Spinneys Market",
+      "address_ar": "53 شارع سوريا، أمام ماركت سبينس"
+    },
+    {
+      "name_en": "El-Mahalla El-Kubra",
+      "name_ar": "المحلة الكبرى",
+      "address_en": "El-Galaa Street, El-Mashhama Square, in front of El-Saidi for Sweets",
+      "address_ar": "شارع الجلاء، ميدان المشحمة، أمام الصعيدي للحاويات"
+    },
+    {
+      "name_en": "Delta Landmark",
+      "name_ar": "دلتا لاند مارك",
+      "address_en": "Km 64 Cairo-Alexandria Agricultural Road, next to Menoufia National University",
+      "address_ar": "الكيلو 64 طريق مصر إسكندرية الزراعي، بجوار جامعة المنوفية الأهلية"
+    }
+  ],
+  "hotline": "15243",
+  "vat_note": "الأسعار تشمل ضريبة القيمة المضافة"
+}

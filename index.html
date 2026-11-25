@@ -59,6 +59,103 @@
       overflow: hidden;
     }
 
+    /* Work Section Styles */
+    .work-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 640px) {
+      .work-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .work-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .work-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: var(--transition-fast);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .work-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .work-thumbnail {
+      height: 200px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #12121a;
+      border-radius: 12px 12px 0 0;
+      margin-bottom: 16px;
+    }
+
+    .work-thumbnail svg {
+      width: 72px;
+      height: 72px;
+    }
+
+    .work-thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .work-info {
+      padding: 20px;
+    }
+
+    .work-category {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--fg-muted);
+      margin-bottom: 8px;
+    }
+
+    .work-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .work-desc {
+      font-size: 0.875rem;
+      color: var(--fg-muted);
+      margin-bottom: 12px;
+    }
+
+    .work-tags {
+      display: flex;
+      gap: 6px;
+    }
+
+    .work-tag {
+      font-size: 0.65rem;
+      padding: 4px 8px;
+      background: var(--accent-dim);
+      color: var(--accent);
+      border-radius: 4px;
+      font-size: 0.65rem;
+    }
+
     .orb {
       position: absolute;
       border-radius: 50%;
@@ -954,10 +1051,26 @@
             </div>
           </a>
         </article>
+        <article class="work-card reveal stagger-3">
+          <a href="molo-upload/index.html" style="text-decoration: none; color: inherit; display: block;">
+            <div class="work-thumbnail" aria-hidden="true">
+              <img src="molo-upload/images/hero.jpg" alt="Molo Concept Redesign" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px 12px 0 0;">
+            </div>
+            <div class="work-info">
+              <span class="work-category">Concept Redesign</span>
+              <h3 class="work-title">Molo Concept Redesign</h3>
+              <p class="work-desc">A cinematic single-page menu redesign for Molo Broast (Egypt) — dark cinematic aesthetic, bilingual EN/AR, GSAP animations, 57 menu items</p>
+              <div class="work-tags">
+                <span class="work-tag">HTML</span>
+                <span class="work-tag">CSS</span>
+                <span class="work-tag">JavaScript</span>
+                <span class="work-tag">GSAP</span>
+              </div>
+            </div>
+          </a>
+        </article>
       </div>
     </section>
-
-    <!-- About Section -->
     <section class="about" id="about">
       <div class="about-content">
         <div class="about-image">

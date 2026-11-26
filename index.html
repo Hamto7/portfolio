@@ -1582,28 +1582,7 @@
       });
     });
 
-    // Form submission handling (demo)
-    const contactForm = document.getElementById('contactForm');
-    contactForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const btn = contactForm.querySelector('.form-submit');
-      const originalText = btn.textContent;
-      btn.textContent = 'Sending...';
-      btn.disabled = true;
-
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 1500));
-
-      btn.textContent = 'Sent!';
-      btn.style.background = '#10b981';
-      setTimeout(() => {
-        btn.textContent = originalText;
-        btn.style.background = '';
-        btn.disabled = false;
-        contactForm.reset();
-      }, 2000);
-    });
-
+    
     // Parallax effect on hero orbs
     const orbs = document.querySelectorAll('.orb');
     window.addEventListener('mousemove', (e) => {

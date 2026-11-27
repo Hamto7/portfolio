@@ -7,7 +7,9 @@
   <title>Mohamed Adel | UI/UX Designer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/inter/v19/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2">
+  <link rel="preload" as="image" href="logo.jpeg" fetchpriority="high">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=optional&subset=latin" rel="stylesheet">
   <style>
     :root {
       --bg: #12050a;
@@ -25,6 +27,19 @@
       --bg-scroll-start: #12050a;
       --bg-scroll-mid: #4a0d1f;
       --bg-scroll-end: #12050a;
+      /* Spacing scale */
+      --space-xs: 4px;
+      --space-sm: 8px;
+      --space-md: 16px;
+      --space-lg: 24px;
+      --space-xl: 32px;
+      --space-2xl: 48px;
+      --space-3xl: 64px;
+      --space-4xl: 80px;
+      /* Breakpoint tokens */
+      --bp-mobile-max: 479px;
+      --bp-tablet-max: 767px;
+      --bp-desktop-max: 1023px;
     }
 
     *, *::before, *::after {
@@ -75,7 +90,7 @@
     .work-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 24px;
+      gap: var(--space-lg);
       max-width: 1200px;
       margin: 0 auto;
     }
@@ -96,7 +111,7 @@
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 24px;
+      padding: var(--space-lg);
       transition: var(--transition-fast);
       display: flex;
       flex-direction: column;
@@ -117,7 +132,7 @@
       overflow: hidden;
       background: #12121a;
       border-radius: 12px 12px 0 0;
-      margin-bottom: 16px;
+      margin-bottom: var(--space-md);
     }
 
     .work-thumbnail svg {
@@ -133,11 +148,11 @@
     }
 
     .work-info {
-      padding: 20px;
+      padding: var(--space-md);
     }
 
     .work-category {
-      font-size: 0.75rem;
+      font-size: 0.875rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: var(--fg-muted);
@@ -145,146 +160,36 @@
     }
 
     .work-title {
-      font-size: 1.25rem;
+      font-size: 1.125rem;
       font-weight: 600;
       margin-bottom: 8px;
     }
 
     .work-desc {
-      font-size: 0.875rem;
+      font-size: 0.9375rem;
       color: var(--fg-muted);
       margin-bottom: 12px;
     }
 
     .work-tags {
       display: flex;
-      gap: 6px;
+      gap: var(--space-xs);
     }
 
     .work-tag {
-      font-size: 0.65rem;
-      padding: 4px 8px;
-      background: var(--accent-dim);
-      color: var(--accent);
-      border-radius: 4px;
-      font-size: 0.65rem;
-    }
-
-    /* Hero red glow animation */
-    @keyframes heroGlow {
-      0%, 100% { opacity: 0.15; transform: scale(1); }
-      50% { opacity: 0.25; transform: scale(1.05); }
-    }
-
-    .hero-glow {
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at center, rgba(225, 29, 72, 0.15) 0%, transparent 70%);
-      pointer-events: none;
-      z-index: 0;
-      animation: heroGlow 12s ease-in-out infinite;
-    }
-
-    /* Work Section Styles */
-    .work-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    @media (min-width: 640px) {
-      .work-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .work-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    .work-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 24px;
-      transition: var(--transition-fast);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .work-card:hover {
-      border-color: var(--accent);
-      box-shadow: 0 10px 30px rgba(225, 29, 72, 0.2);
-      transform: translateY(-6px);
-    }
-
-    .work-thumbnail {
-      height: 200px;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      background: #12121a;
-      border-radius: 12px 12px 0 0;
-      margin-bottom: 16px;
-    }
-
-    .work-thumbnail svg {
-      width: 72px;
-      height: 72px;
-    }
-
-    .work-thumbnail img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .work-info {
-      padding: 20px;
-    }
-
-    .work-category {
       font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--fg-muted);
-      margin-bottom: 8px;
-    }
-
-    .work-title {
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-
-    .work-desc {
-      font-size: 0.875rem;
-      color: var(--fg-muted);
-      margin-bottom: 12px;
-    }
-
-    .work-tags {
-      display: flex;
-      gap: 6px;
-    }
-
-    .work-tag {
-      font-size: 0.65rem;
       padding: 4px 8px;
       background: var(--accent-dim);
       color: var(--accent);
       border-radius: 4px;
-      font-size: 0.65rem;
     }
 
     /* Hero glow animation */
+    @keyframes heroGlow {
+      0%, 100% { opacity: 0.15; transform: scale(1); }
+      50% { opacity: 0.25; transform: scale(1.05); }
+    }
+
     .hero-glow {
       position: absolute;
       inset: 0;
@@ -292,110 +197,6 @@
       pointer-events: none;
       z-index: 0;
       animation: heroGlow 12s ease-in-out infinite;
-    }
-
-    @keyframes heroGlow {
-      0%, 100% { opacity: 0.15; transform: scale(1); }
-      50% { opacity: 0.25; transform: scale(1.05); }
-    }
-
-    /* Work Section Styles */
-    .work-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    @media (min-width: 640px) {
-      .work-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .work-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    .work-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 24px;
-      transition: var(--transition-fast);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .work-card:hover {
-      border-color: var(--accent);
-      box-shadow: 0 10px 30px rgba(225, 29, 72, 0.2);
-      transform: translateY(-6px);
-    }
-
-    .work-thumbnail {
-      height: 200px;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      background: #12121a;
-      border-radius: 12px 12px 0 0;
-      margin-bottom: 16px;
-    }
-
-    .work-thumbnail svg {
-      width: 72px;
-      height: 72px;
-    }
-
-    .work-thumbnail img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .work-info {
-      padding: 20px;
-    }
-
-    .work-category {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--fg-muted);
-      margin-bottom: 8px;
-    }
-
-    .work-title {
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-
-    .work-desc {
-      font-size: 0.875rem;
-      color: var(--fg-muted);
-      margin-bottom: 12px;
-    }
-
-    .work-tags {
-      display: flex;
-      gap: 6px;
-    }
-
-    .work-tag {
-      font-size: 0.65rem;
-      padding: 4px 8px;
-      background: var(--accent-dim);
-      color: var(--accent);
-      border-radius: 4px;
-      font-size: 0.65rem;
     }
 
     /* Orb styles - updated for red theme */
@@ -639,9 +440,9 @@
     }
 
     .hero-description {
-      font-size: 1.15rem;
+      font-size: clamp(1rem, 0.95rem + 0.3vw, 1.15rem);
       color: var(--fg-muted);
-      max-width: 500px;
+      max-width: 55ch;
       margin-bottom: 40px;
       line-height: 1.7;
     }
@@ -881,8 +682,9 @@
     .about-text p {
       color: var(--fg-muted);
       margin-bottom: 20px;
-      font-size: 1.05rem;
+      font-size: clamp(1rem, 0.95rem + 0.2vw, 1.05rem);
       line-height: 1.8;
+      max-width: 65ch;
     }
 
     .skills {
@@ -893,14 +695,17 @@
     }
 
     .skill-pill {
-      padding: 10px 20px;
+      padding: 14px 24px;
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 100px;
-      font-size: 0.85rem;
+      font-size: clamp(0.9375rem, 0.85rem + 0.2vw, 0.9375rem);
       font-weight: 500;
       color: var(--fg);
       transition: var(--transition-fast);
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
     }
 
     .skill-pill:hover {
@@ -1065,8 +870,9 @@
     .contact-info p {
       color: var(--fg-muted);
       margin-bottom: 30px;
-      font-size: 1.05rem;
+      font-size: clamp(1rem, 0.95rem + 0.2vw, 1.05rem);
       line-height: 1.7;
+      max-width: 65ch;
     }
 
     .contact-links {
@@ -1120,13 +926,13 @@
       display: block;
       margin-bottom: 8px;
       font-weight: 500;
-      font-size: 0.9rem;
+      font-size: clamp(0.9375rem, 0.9rem + 0.1vw, 0.9375rem);
     }
 
     .form-group input,
     .form-group textarea {
       width: 100%;
-      padding: 16px 20px;
+      padding: 18px 20px;
       background: var(--bg);
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
@@ -1134,6 +940,7 @@
       font-family: inherit;
       font-size: 1rem;
       transition: var(--transition-fast);
+      min-height: 44px;
     }
 
     .form-group input:focus,
@@ -1150,8 +957,9 @@
 
     .form-submit {
       width: 100%;
-      padding: 16px;
+      padding: 18px;
       font-size: 1rem;
+      min-height: 44px;
     }
 
     /* Footer */
@@ -1170,7 +978,7 @@
 
     .footer-copyright {
       color: var(--fg-muted);
-      font-size: 0.9rem;
+      font-size: clamp(0.875rem, 0.85rem + 0.1vw, 0.9rem);
     }
 
     .footer-social {
@@ -1209,6 +1017,7 @@
       z-index: 1000;
       transform-origin: left;
       transform: scaleX(0);
+      pointer-events: none;
     }
 
     /* Reveal animation utility */
@@ -1290,6 +1099,129 @@
         scroll-behavior: auto !important;
       }
     }
+
+    /* Mobile Menu Toggle Button */
+    .mobile-menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      color: var(--fg);
+      transition: var(--transition-fast);
+      flex-shrink: 0;
+    }
+
+    .mobile-menu-toggle:hover {
+      background: var(--accent-dim);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .mobile-menu-toggle:active {
+      transform: scale(0.95);
+    }
+
+    .mobile-menu-toggle:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    @media (max-width: 767px) {
+      .mobile-menu-toggle {
+        display: flex;
+      }
+    }
+
+    /* Mobile Menu Dialog */
+    #mobile-menu {
+      position: fixed;
+      top: 64px; left: 0; right: 0;
+      width: 100%;
+      margin: 0;
+      border: none;
+      background: var(--bg);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+      z-index: 200;
+      padding: var(--space-lg) var(--space-md);
+      overflow-y: auto;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    #mobile-menu[open] {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #mobile-menu::backdrop {
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    @keyframes slideInRight {
+      from { transform: translateX(100%); }
+      to { transform: translateX(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .mobile-nav ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+
+    .mobile-nav a {
+      display: block;
+      padding: var(--space-md) var(--space-lg);
+      color: var(--fg);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.125rem;
+      border-radius: var(--radius-sm);
+      background: var(--card);
+      border: 1px solid var(--border);
+      transition: var(--transition-fast);
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+    }
+
+    .mobile-nav a:hover,
+    .mobile-nav a:active {
+      background: var(--accent-dim);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .mobile-nav a:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    @media (max-width: 767px) {
+      .nav-links {
+        display: none;
+      }
+    }
+
+    /* Ensure sections don't overflow on mobile */
+    section {
+      max-width: 100vw;
+    }
+
+    .container {
+      max-width: 100vw;
+    }
   </style>
 </head>
 <body>
@@ -1314,8 +1246,21 @@
           <li><a href="#process" data-section="process">Process</a></li>
           <li><a href="#contact" data-section="contact">Contact</a></li>
         </ul>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" data-mobile-menu-toggle>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
       </nav>
     </header>
+    <dialog id="mobile-menu">
+      <nav class="mobile-nav">
+        <ul>
+          <li><a href="#work" data-section="work">Work</a></li>
+          <li><a href="#about" data-section="about">About</a></li>
+          <li><a href="#process" data-section="process">Process</a></li>
+          <li><a href="#contact" data-section="contact">Contact</a></li>
+        </ul>
+      </nav>
+    </dialog>
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
@@ -1409,12 +1354,12 @@
         <article class="work-card reveal stagger-3">
           <a href="molo-upload/index.html" style="text-decoration: none; color: inherit; display: block;">
             <div class="work-thumbnail" aria-hidden="true">
-              <img src="molo-upload/images/hero.jpg" alt="Molo Concept Redesign" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px 12px 0 0;">
+              <img src="molo-upload/images/hero.jpg" alt="Molo Concept Redesign" width="800" height="450" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px 12px 0 0;" loading="lazy">
             </div>
             <div class="work-info">
               <span class="work-category">Concept Redesign</span>
               <h3 class="work-title">Molo Concept Redesign</h3>
-              <p class="work-desc">A cinematic single-page menu redesign for Molo Broast (Egypt) — dark cinematic aesthetic, bilingual EN/AR, GSAP animations, 57 menu items</p>
+              <p class="work-desc">A cinematic single-page menu redesign for Molo Broast (Egypt) � dark cinematic aesthetic, bilingual EN/AR, GSAP animations, 57 menu items</p>
               <div class="work-tags">
                 <span class="work-tag">HTML</span>
                 <span class="work-tag">CSS</span>
@@ -1433,13 +1378,13 @@
         <div class="about-image">
           <div class="image-frame">
             <div class="image-placeholder" aria-hidden="true">
-              <img src="logo.jpeg" alt="Mohamed Adel logo" style="width: 100%; height: 100%; object-fit: cover;">
+              <img src="logo.jpeg" alt="Mohamed Adel logo" width="400" height="400" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy" fetchpriority="high">
             </div>
           </div>
         </div>
         <div class="about-text reveal" id="aboutText">
           <p>I'm Mohamed Adel, a Computer Science graduate currently learning UI/UX design, motion design, and web development.</p>
-          <p>My background in computer science gives me a strong technical foundation, and I'm now focused on bridging the gap between code and design — creating interfaces that are both beautiful and technically sound.</p>
+          <p>My background in computer science gives me a strong technical foundation, and I'm now focused on bridging the gap between code and design � creating interfaces that are both beautiful and technically sound.</p>
           <p>This portfolio is a living document of my learning journey. As I build projects and develop my skills, I'll be adding case studies and experiments here.</p>
           <div class="skills">
             <span class="skill-pill">Figma</span>
@@ -1466,7 +1411,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
         </div>
         <h3 class="placeholder-title">Coming Soon</h3>
-        <p class="placeholder-desc">As I develop my design practice, I'll document my process here — from research and ideation through prototyping and handoff.</p>
+        <p class="placeholder-desc">As I develop my design practice, I'll document my process here � from research and ideation through prototyping and handoff.</p>
       </div>
     </section>
 
@@ -1493,7 +1438,7 @@
       </div>
       <div class="contact-content">
         <div class="contact-info reveal" id="contactInfo">
-          <p>I'm always open to connecting with other designers, developers, and mentors. Whether you have feedback on my work, want to collaborate, or just want to say hi — feel free to reach out.</p>
+          <p>I'm always open to connecting with other designers, developers, and mentors. Whether you have feedback on my work, want to collaborate, or just want to say hi � feel free to reach out.</p>
           <div class="contact-links">
             <a href="mailto:muhamed.adel.m@gmail.com" class="contact-link">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
@@ -1522,7 +1467,7 @@
     <!-- Footer -->
     <footer>
       <div class="footer-content">
-        <p class="footer-copyright">© 2025 Mohamed Adel. Built while learning.</p>
+        <p class="footer-copyright">� 2025 Mohamed Adel. Built while learning.</p>
         <div class="footer-social">
           <a href="mailto:muhamed.adel.m@gmail.com" class="social-link" aria-label="Email">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
@@ -1681,6 +1626,63 @@
         ticking = true;
       }
     }
+
+    // Mobile menu toggle
+    document.addEventListener('DOMContentLoaded', () => {
+      const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      function openMobileMenu(e) {
+        if (e) e.stopPropagation();
+        if (!mobileMenu.open) {
+          mobileMenu.showModal();
+        }
+        mobileMenuToggle.setAttribute('aria-expanded', 'true');
+      }
+
+      function closeMobileMenu() {
+        if (mobileMenu.open) {
+          mobileMenu.close();
+        }
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+      }
+
+      if (mobileMenuToggle && mobileMenu) {
+        // Open menu when hamburger tapped/clicked
+        mobileMenuToggle.addEventListener('click', (e) => {
+          if (mobileMenu.open) {
+            closeMobileMenu();
+          } else {
+            openMobileMenu(e);
+          }
+        });
+
+        // Close menu when a link is tapped
+        mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', closeMobileMenu);
+        });
+
+        // Close menu when tapping outside (backdrop click for dialog)
+        mobileMenu.addEventListener('click', (e) => {
+          const rect = mobileMenu.getBoundingClientRect();
+          if (
+            e.clientX < rect.left ||
+            e.clientX > rect.right ||
+            e.clientY < rect.top ||
+            e.clientY > rect.bottom
+          ) {
+            closeMobileMenu();
+          }
+        });
+
+        // Close menu on Escape key
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+            closeMobileMenu();
+          }
+        });
+      }
+    });
     window.addEventListener('scroll', onScroll, { passive: true });
   </script>
 </body>
